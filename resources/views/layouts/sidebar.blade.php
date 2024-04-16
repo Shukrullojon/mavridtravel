@@ -18,41 +18,6 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{{ route('lang.index') }}" class="nav-link {{ Request::is('lang*') ? "active":'' }}">
-                        <i class="fa fa-language"></i>
-                        <p>Langs</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ route('circle.index') }}" class="nav-link {{ Request::is('circle*') ? "active":'' }}">
-                        <i class="fa fa-circle"></i>
-                        <p>Circle</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ route('card.index') }}" class="nav-link {{ Request::is('card*') ? "active":'' }}">
-                        <i class="fa fa-sim-card"></i>
-                        <p>Card</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ route('ccard.index') }}" class="nav-link {{ Request::is('ccard*') ? "active":'' }}">
-                        <i class="fa fa-info-circle"></i>
-                        <p>Circle Card</p>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a href="{{ route('bilet.index') }}" class="nav-link {{ Request::is('bilet*') ? "active":'' }}">
-                        <i class="fa fa-ticket-alt"></i>
-                        <p>Bilet</p>
-                    </a>
-                </li>
-
                 <li class="nav-item {{ (Request::is('roles*') or Request::is('permissions*')) ? 'menu-open' : '' }}">
                     <a href="#"
                        class="nav-link {{ (Request::is('roles*') or Request::is('permissions*')) ? 'active' : '' }}">
