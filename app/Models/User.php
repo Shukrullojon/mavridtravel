@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -19,23 +18,16 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
         'email',
         'password',
-        'fio',
-        'date_entry',
-        'position_id',
-        'department_id',
-        'education',
-        'education_name',
-        'graduation_year',
-        'specialist',
-        'birthdate',
-        'birth_place',
-        'gender',
-        'nationality',
-        'citizenship',
-        'family_status',
+        'name',
+        'chat_id',
+        'phone',
+        'first_name',
+        'last_name',
+        'username',
+        'step',
+        'status',
     ];
 
     /**
@@ -58,11 +50,4 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function position(){
-        return $this->belongsTo(Position::class);
-    }
-
-    public function department(){
-        return $this->belongsTo(Department::class);
-    }
 }

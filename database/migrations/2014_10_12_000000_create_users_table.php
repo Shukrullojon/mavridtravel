@@ -13,25 +13,18 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->string("fio")->nullable();
-            $table->date("date_entry")->nullable();
-            $table->unsignedBigInteger("position_id")->nullable();
-            $table->unsignedBigInteger("department_id")->nullable();
-            $table->string("education")->nullable();
-            $table->string("education_name")->nullable();
-            $table->string("graduation_year",10)->nullable();
-            $table->string("specialist",100)->nullable();
-            $table->date("birthdate")->nullable();
-            $table->string("birth_place",100)->nullable();
-            $table->tinyInteger("gender")->default(0)->comment("0 -> male, 1 -> female");
-            $table->string("nationality")->nullable();
-            $table->string("citizenship")->nullable();
-            $table->string("family_status")->nullable();
+            $table->string('password')->nullable();
+            $table->rememberToken()->nullable();
+            $table->string('name')->nullable();
+            $table->string('chat_id')->unique()->nullable();
+            $table->string('phone',20)->nullable();
+            $table->string('first_name',50)->nullable();
+            $table->string('last_name',50)->nullable();
+            $table->string('username',50)->nullable();
+            $table->tinyInteger('step')->default(0)->nullable();
+            $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });
     }

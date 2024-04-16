@@ -8,7 +8,7 @@
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Sign in to MOUNTAIN TRAVEL</p>
+                <p class="login-box-msg">Sign in to CASH FLOW</p>
 
                 <form method="POST" action="{{ route('login') }}">
                     @csrf

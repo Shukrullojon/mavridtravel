@@ -10,8 +10,12 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(PermissionSeeder::class);
         $this->call(AdminSeeder::class);
-        $this->call(DepartmentSeeder::class);
-        $this->call(PositionSeeder::class);
-        $this->call(EmployeeSeeder::class);
+        $this->call(LangSeeder::class);
+        $this->call(WorkSeeder::class);
+        $this->call(PurposeSeeder::class);
+        $this->call(CircleSeed::class);
+        $this->call(CardSeeder::class);
+        $this->call(BiletSeeder::class);
+        $this->call(CircleCardSeeder::class);
     }
 }
