@@ -24,6 +24,11 @@
                 </div>
 
                 <div class="form-group">
+                    <strong>Image:</strong>
+                    <img src="{{ asset('public/images/'.$trip->image) }}" height="100px">
+                </div>
+
+                <div class="form-group">
                     <strong>Status:</strong>
                     {{ $trip->status }}
                 </div>

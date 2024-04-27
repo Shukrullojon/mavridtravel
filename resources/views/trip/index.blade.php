@@ -22,6 +22,7 @@
             <tr>
                 <th>Name</th>
                 <th>Info</th>
+                <th>Image</th>
                 <th>Status</th>
                 <th></th>
             </tr>
@@ -29,6 +30,7 @@
                 <tr>
                     <td>{{ $trip->name }}</td>
                     <td>{{ $trip->info }}</td>
+                    <td><img src="{{ asset('public/images/'.$trip->image) }}" height="100px"></td>
                     <td>{{ $trip->status }}</td>
                     <td>
                         <div class="btn-group">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Trip;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TripController extends Controller
 {
@@ -34,7 +35,16 @@ class TripController extends Controller
         $this->validate($request, [
             'name' => 'required',
         ]);
-        Trip::create($request->all());
+        if ($request->hasFile('image')){
+            $filename = time().rand(100,999). '_'. time().'.'.$request->file('image')->getClientOriginalExtension();
+            $request->image->move(public_path('images'), $filename);
+        }
+        Trip::create([
+            'name' => $request->name,
+            'info' => $request->info,
+            'status' => $request->status,
+            'image' => isset($filename) ? $filename : "",
+        ]);
         return redirect()->route('trip.index')->with('success','Trip created successfully');
     }
 
@@ -69,7 +79,20 @@ class TripController extends Controller
             'name' => 'required',
         ]);
         $trip = Trip::find($id);
-        $trip->update($request->all());
+        $filename = $trip->image;
+        if ($request->hasFile('image')){
+            if (!empty($trip->image)){
+                Storage::delete('public/images/'.$trip->image);
+            }
+            $filename = time().rand(100,999). '_'. time().'.'.$request->file('image')->getClientOriginalExtension();
+            $request->image->move(public_path('images'), $filename);
+        }
+        $trip->update([
+            'name' => $request->name,
+            'info' => $request->info,
+            'status' => $request->status,
+            'image' => isset($filename) ? $filename : "",
+        ]);
         return redirect()->route('trip.index')
             ->with('success','Trip updated successfully');
     }

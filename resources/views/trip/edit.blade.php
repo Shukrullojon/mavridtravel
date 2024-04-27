@@ -42,6 +42,13 @@
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
+                    <strong>Image:</strong>
+                    {!! Form::file('image', null, array('placeholder' => 'Image','class' => 'form-control')) !!}
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
                     <strong>Status:</strong>{!! Form::label('*',"*",['style'=>"color:red"]) !!}
                     {!! Form::text('status', null, array('placeholder' => 'Status','class' => 'form-control')) !!}
                 </div>

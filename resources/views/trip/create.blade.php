@@ -24,7 +24,7 @@
         @endif
 
 
-        {!! Form::open(array('route' => 'trip.store','method'=>'POST')) !!}
+        {!! Form::open(['route' => 'trip.store','method'=>'POST','enctype' => 'multipart/form-data']) !!}
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
@@ -37,6 +37,13 @@
                 <div class="form-group">
                     <strong>Info:</strong>{!! Form::label('*',"*",['style'=>"color:red"]) !!}
                     {!! Form::text('info', null, array('placeholder' => 'Info','class' => 'form-control')) !!}
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Image:</strong>
+                    {!! Form::file('image', null, array('placeholder' => 'Image','class' => 'form-control')) !!}
                 </div>
             </div>
 
